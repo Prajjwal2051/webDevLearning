@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comprehensive HTML Tags Cheat Sheet</title>
+    <style>
+        /* Reset and base styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0 1rem 2rem;
+            background: #fafafa;
+            color: #222;
+            line-height: 1.5;
+        }
+        header {
+            background: #007acc;
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            /*position: sticky;*/
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        nav {
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover, nav a:focus {
+            color: #ffd54f;
+        }
+        section {
+            margin-top: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #ddd;
+        }
+        section:last-child {
+            border: none;
+        }
+        h2 {
+            border-bottom: 3px solid #007acc;
+            padding-bottom: 0.25rem;
+            color: #005a9e;
+        }
+        h3 {
+            margin-top: 1.5rem;
+            color: #005a9e;
+            font-weight: 700;
+        }
+        .tag-block {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            margin-top: 1rem;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.05);
+        }
+        .tag-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: #e3f2fd;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            user-select: all;
+        }
+        .desc {
+            margin-top: 0.3rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+        .attrs {
+            margin-bottom: 0.5rem;
+        }
+        .attrs strong {
+            color: #007acc;
+        }
+        .code-example {
+            background: #273746;
+            color: #f8f8f8;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            margin-bottom: 0.6rem;
+            user-select: text;
+        }
+        .output-example {
+            border: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+            border-radius: 5px;
+            background: #e9f7ef;
+            margin-bottom: 1rem;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+        @media (min-width: 768px) {
+            .flex-container {
+                display: flex;
+                gap: 1rem;
+            }
+            .code-example, .output-example {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        }
+        /* Scrollbar for code blocks */
+        .code-example::-webkit-scrollbar {
+            height: 6px;
+        }
+        .code-example::-webkit-scrollbar-track {
+            background: #2f3b45;
+        }
+        .code-example::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Comprehensive HTML Tags Cheat Sheet</h1>
+    <nav>
+        <a href="#document-structure">Document Structure</a> |
+        <a href="#text-content">Text Content</a> |
+        <a href="#grouping-and-sectioning">Grouping &amp; Sectioning</a> |
+        <a href="#links-and-media">Links &amp; Media</a> |
+        <a href="#forms">Forms &amp; Input</a> |
+        <a href="#tables">Tables</a> |
+        <a href="#embedded-content">Embedded Content</a> |
+        <a href="#scripting">Scripting</a> |
+        <a href="#deprecated-tags">Deprecated Tags</a>
+    </nav>
+</header>
+
+<!-- Document Structure -->
+<section id="document-structure">
+    <h2>Document Structure Tags</h2>
+
+    <article class="tag-block" id="doctype">
+        <div class="tag-name">&lt;!DOCTYPE&gt;</div>
+        <div class="desc">
+            Defines the document type and version of HTML. It should be the first thing in an HTML document.
+        </div>
+        <div class="attrs">
+            <strong>Attributes:</strong> None (write exactly as <code>&lt;!DOCTYPE html&gt;</code> for HTML5)
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;!DOCTYPE html&gt;</pre>
+            <div class="output-example">Indicates the document is HTML5</div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="html">
+        <div class="tag-name">&lt;html&gt;</div>
+        <div class="desc">The root element of an HTML page. Holds all HTML content.</div>
+        <div class="attrs">
+            <strong>Attributes:</strong>
+            <ul>
+                <li><code>lang</code>: Specifies language of the document (e.g., <code>en</code>, <code>fr</code>)</li>
+                <li><code>dir</code>: Text direction (<code>ltr</code>, <code>rtl</code>, <code>auto</code>)</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;html lang="en" dir="ltr"&gt;
+  ...
+&lt;/html&gt;</pre>
+            <div class="output-example">
+                Root of the HTML document representing English language with left-to-right text direction
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="head">
+        <div class="tag-name">&lt;head&gt;</div>
+        <div class="desc">
+            Contains meta-information about the document, scripts, styles, and title.
+        </div>
+        <div class="attrs">
+            <strong>Attributes:</strong> None
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</pre>
+            <div class="output-example">Metadata and resource linking goes here (not shown visually)</div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="body">
+        <div class="tag-name">&lt;body&gt;</div>
+        <div class="desc">Contains the visible content of the HTML document.</div>
+        <div class="attrs">
+            <strong>Attributes:</strong>
+            <ul>
+                <li><code>onload</code>: Script to run when page finished loading</li>
+                <li>Global attributes allowed</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;body&gt;
+  &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;p&gt;This is page content.&lt;/p&gt;
+&lt;/body&gt;</pre>
+            <div class="output-example">
+                <h1>Hello World</h1>
+                <p>This is page content.</p>
+            </div>
+        </div>
+    </article>
+</section>
+
+<!-- Text Content -->
+<section id="text-content">
+    <h2>Text Content Tags</h2>
+
+    <article class="tag-block" id="headings">
+        <div class="tag-name">&lt;h1&gt; to &lt;h6&gt;</div>
+        <div class="desc">
+            Define HTML headings in decreasing order of importance: h1 is the most important and h6 the least.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;</pre>
+            <div class="output-example">
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="paragraph">
+        <div class="tag-name">&lt;p&gt;</div>
+        <div class="desc">Defines a paragraph of text.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;This is a paragraph.&lt;/p&gt;</pre>
+            <div class="output-example">This is a paragraph.</div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="bold">
+        <div class="tag-name">&lt;b&gt;</div>
+        <div class="desc">Defines bold text without added importance or emphasis.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;b&gt;Bold text&lt;/b&gt;</pre>
+            <div class="output-example"><b>Bold text</b></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="strong">
+        <div class="tag-name">&lt;strong&gt;</div>
+        <div class="desc">Defines important text with strong emphasis, typically displayed in bold.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;strong&gt;Strong importance&lt;/strong&gt;</pre>
+            <div class="output-example"><strong>Strong importance</strong></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="italic">
+        <div class="tag-name">&lt;i&gt;</div>
+        <div class="desc">
+            Defines text in an alternate voice or mood (italicized text visually).
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;i&gt;Italic text&lt;/i&gt;</pre>
+            <div class="output-example"><i>Italic text</i></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="emphasis">
+        <div class="tag-name">&lt;em&gt;</div>
+        <div class="desc">Defines emphasized text with importance, typically rendered in italics.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;em&gt;Emphasized text&lt;/em&gt;</pre>
+            <div class="output-example"><em>Emphasized text</em></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="small">
+        <div class="tag-name">&lt;small&gt;</div>
+        <div class="desc">Defines smaller side comments or legal disclaimers.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;small&gt;Smaller text&lt;/small&gt;</pre>
+            <div class="output-example"><small>Smaller text</small></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="mark">
+        <div class="tag-name">&lt;mark&gt;</div>
+        <div class="desc">Defines highlighted or marked text, rendered with a yellow background by default.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;mark&gt;Highlighted text&lt;/mark&gt;</pre>
+            <div class="output-example"><mark>Highlighted text</mark></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="abbr">
+        <div class="tag-name">&lt;abbr&gt;</div>
+        <div class="desc">
+            Defines an abbreviation or acronym. The full description can be provided in the <code>title</code> attribute.
+        </div>
+        <div class="attrs">
+            <strong>Attributes:</strong>
+            <ul>
+                <li><code>title</code>: Full description or meaning of the abbreviation</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</pre>
+            <div class="output-example"><abbr title="HyperText Markup Language">HTML</abbr></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="quote">
+        <div class="tag-name">&lt;blockquote&gt;</div>
+        <div class="desc">
+            Defines a section quoted from another source. Usually indented by default.
+        </div>
+        <div class="attrs">
+            Global attributes allowed.
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;blockquote&gt;
+  &lt;p&gt;To be or not to be, that is the question.&lt;/p&gt;
+&lt;/blockquote&gt;</pre>
+            <div class="output-example">
+                <blockquote>To be or not to be, that is the question.</blockquote>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="cite">
+        <div class="tag-name">&lt;cite&gt;</div>
+        <div class="desc">
+            Defines the title of a work, such as a book, paper, song, or movie.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;Written by &lt;cite&gt;William Shakespeare&lt;/cite&gt;.&lt;/p&gt;</pre>
+            <div class="output-example">
+                <p>Written by <cite>William Shakespeare</cite>.</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="code">
+        <div class="tag-name">&lt;code&gt;</div>
+        <div class="desc">
+            Defines inline code snippet or computer code.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;Use the function &lt;code&gt;alert()&lt;/code&gt; to show messages.&lt;/p&gt;</pre>
+            <div class="output-example">
+                <p>Use the function <code>alert()</code> to show messages.</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="kbd">
+        <div class="tag-name">&lt;kbd&gt;</div>
+        <div class="desc">
+            Defines keyboard input from the user.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;Press &lt;kbd&gt;Ctrl + S&lt;/kbd&gt; to save.&lt;/p&gt;</pre>
+            <div class="output-example">
+                <p>Press <kbd>Ctrl + S</kbd> to save.</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="samp">
+        <div class="tag-name">&lt;samp&gt;</div>
+        <div class="desc">Defines sample output from a program or computer.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;Server response: &lt;samp&gt;404 Not Found&lt;/samp&gt;&lt;/p&gt;</pre>
+            <div class="output-example">Server response: <samp>404 Not Found</samp></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="var">
+        <div class="tag-name">&lt;var&gt;</div>
+        <div class="desc">Defines a variable in a mathematical expression or programming context.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;The variable &lt;var&gt;x&lt;/var&gt; is undefined.&lt;/p&gt;</pre>
+            <div class="output-example">The variable <var>x</var> is undefined.</div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="time">
+        <div class="tag-name">&lt;time&gt;</div>
+        <div class="desc">Defines a date or time or both. Using the <code>datetime</code> attribute improves machine readability.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>datetime</code>: ISO 8601 date and/or time (e.g., <code>2021-11-10</code>, <code>2021-11-10T14:30</code>)</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;time datetime="2021-11-10"&gt;November 10, 2021&lt;/time&gt;</pre>
+            <div class="output-example"><time datetime="2021-11-10">November 10, 2021</time></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="del">
+        <div class="tag-name">&lt;del&gt;</div>
+        <div class="desc">Defines text that has been deleted from a document. Usually shown with a strike-through.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;&lt;del&gt;Old Price: $50&lt;/del&gt; New Price: $30&lt;/p&gt;</pre>
+            <div class="output-example"><p><del>Old Price: $50</del> New Price: $30</p></div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="ins">
+        <div class="tag-name">&lt;ins&gt;</div>
+        <div class="desc">Defines text that has been inserted into a document. Usually shown with underline.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;The price is &lt;ins&gt;$30&lt;/ins&gt; now.&lt;/p&gt;</pre>
+            <div class="output-example"><p>The price is <ins>$30</ins> now.</p></div>
+        </div>
+    </article>
+</section>
+
+<!-- Grouping and Sectioning -->
+<section id="grouping-and-sectioning">
+    <h2>Grouping and Sectioning Tags</h2>
+
+    <article class="tag-block" id="div">
+        <div class="tag-name">&lt;div&gt;</div>
+        <div class="desc">Defines a generic container for flow content, often used for styling or scripting purposes.</div>
+        <div class="attrs">Global attributes allowed including <code>id</code>, <code>class</code>, <code>style</code>, <code>data-* attributes</code>.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;div class="container"&gt;
+  &lt;p&gt;Paragraph inside &lt;div&gt;&lt;/p&gt;
+&lt;/div&gt;</pre>
+            <div class="output-example">
+                <div style="padding: 10px; border: 1px solid #aaa;">
+                    <p>Paragraph inside &lt;div&gt;</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="span">
+        <div class="tag-name">&lt;span&gt;</div>
+        <div class="desc">
+            Defines a generic inline container for phrasing content, useful for styling or scripting small parts of text.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;p&gt;This is a &lt;span style="color: red;"&gt;red&lt;/span&gt; word.&lt;/p&gt;</pre>
+            <div class="output-example">
+                <p>This is a <span style="color: red;">red</span> word.</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="section">
+        <div class="tag-name">&lt;section&gt;</div>
+        <div class="desc">Defines a thematic grouping of content, typically with a heading.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;section&gt;
+  &lt;h2&gt;Section Title&lt;/h2&gt;
+  &lt;p&gt;Content in this section.&lt;/p&gt;
+&lt;/section&gt;</pre>
+            <div class="output-example">
+                <section style="border:1px solid #ddd; padding:10px;">
+                    <h2>Section Title</h2>
+                    <p>Content in this section.</p>
+                </section>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="article">
+        <div class="tag-name">&lt;article&gt;</div>
+        <div class="desc">Defines a self-contained piece of content such as a blog post, news article, or forum post.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;article&gt;
+  &lt;h3&gt;Article Title&lt;/h3&gt;
+  &lt;p&gt;Article content here...&lt;/p&gt;
+&lt;/article&gt;</pre>
+            <div class="output-example">
+                <article style="border:1px solid #aaa; padding:10px;">
+                    <h3>Article Title</h3>
+                    <p>Article content here...</p>
+                </article>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="aside">
+        <div class="tag-name">&lt;aside&gt;</div>
+        <div class="desc">
+            Defines content aside from the main page content, such as sidebars, pull quotes, or groups of advertising.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;aside&gt;
+  &lt;p&gt;This is a sidebar.&lt;/p&gt;
+&lt;/aside&gt;</pre>
+            <div class="output-example">
+                <aside style="background:#f7f7f7; padding:10px; border-left: 3px solid #007acc;">
+                    <p>This is a sidebar.</p>
+                </aside>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="header">
+        <div class="tag-name">&lt;header&gt;</div>
+        <div class="desc">Defines introductory content or navigational links typically at the top of a page or section.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;header&gt;
+  &lt;h1&gt;Page Title&lt;/h1&gt;
+  &lt;nav&gt;Navigation&lt;/nav&gt;
+&lt;/header&gt;</pre>
+            <div class="output-example">
+                <header style="background:#007acc; color:#fff; padding:10px;">
+                    <h1>Page Title</h1>
+                    <nav>Navigation</nav>
+                </header>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="footer">
+        <div class="tag-name">&lt;footer&gt;</div>
+        <div class="desc">Defines a footer for a page or section, often containing author info or copyright.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;footer&gt;
+  &lt;p&gt;&copy; 2024 My Website&lt;/p&gt;
+&lt;/footer&gt;</pre>
+            <div class="output-example">
+                <footer style="font-size:0.9rem; color:#666; padding:10px;">
+                    <p>© 2024 My Website</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="nav">
+        <div class="tag-name">&lt;nav&gt;</div>
+        <div class="desc">
+            Defines a set of navigation links.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;nav&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;a href="#about"&gt;About&lt;/a&gt;
+&lt;/nav&gt;</pre>
+            <div class="output-example">
+                <nav>
+                    <a href="#">Home</a> |
+                    <a href="#about">About</a>
+                </nav>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="main">
+        <div class="tag-name">&lt;main&gt;</div>
+        <div class="desc">
+            Specifies the main content of the document. Should appear once per page.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;main&gt;
+  &lt;article&gt;Primary content here...&lt;/article&gt;
+&lt;/main&gt;</pre>
+            <div class="output-example">
+                <main style="background:#efefef; padding:10px; border: 1px solid #ccc;">
+                    <article>Primary content here...</article>
+                </main>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="address">
+        <div class="tag-name">&lt;address&gt;</div>
+        <div class="desc">
+            Defines contact information for the author/owner of a document or article. Usually rendered in italic.
+        </div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;address&gt;
+  Contact us at &lt;a href="mailto:support@example.com"&gt;support@example.com&lt;/a&gt;.
+&lt;/address&gt;</pre>
+            <div class="output-example">
+                <address>Contact us at <a href="mailto:support@example.com">support@example.com</a>.</address>
+            </div>
+        </div>
+    </article>
+</section>
+
+<!-- Links and Media -->
+<section id="links-and-media">
+    <h2>Links and Media Tags</h2>
+
+    <article class="tag-block" id="a">
+        <div class="tag-name">&lt;a&gt;</div>
+        <div class="desc">Defines a hyperlink.</div>
+        <div class="attrs">
+            <strong>Attributes:</strong>
+            <ul>
+                <li><code>href</code>: Specifies the URL of the link</li>
+                <li><code>target</code>: Where to open the link (<code>_self</code>, <code>_blank</code>, etc.)</li>
+                <li><code>rel</code>: Relationship between current document and linked resource (e.g. <code>nofollow</code>, <code>noopener</code>)</li>
+                <li><code>download</code>: Indicates the link is for downloading</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;Visit Example&lt;/a&gt;</pre>
+            <div class="output-example">
+                <a href="https://example.com" target="_blank" rel="noopener">Visit Example</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="img">
+        <div class="tag-name">&lt;img&gt;</div>
+        <div class="desc">Defines an image. It's a void/self-closing tag (no closing tag).</div>
+        <div class="attrs">
+            <strong>Attributes:</strong>
+            <ul>
+                <li><code>src</code>: URL of the image (required)</li>
+                <li><code>alt</code>: Alternative text to describe the image (required for accessibility)</li>
+                <li><code>width</code>, <code>height</code>: Image dimensions</li>
+                <li><code>title</code>: Tooltip text</li>
+                <li><code>loading</code>: Lazy loading attribute (<code>lazy</code>, <code>eager</code>)</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;img src="https://via.placeholder.com/150" alt="Placeholder Image" width="150" height="150"&gt;</pre>
+            <div class="output-example">
+                <img src="https://via.placeholder.com/150" alt="Placeholder Image" width="150" height="150" />
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="picture">
+        <div class="tag-name">&lt;picture&gt;</div>
+        <div class="desc">Container to hold multiple sources for responsive images, falling back to an &lt;img&gt; if none match.</div>
+        <div class="attrs">No direct attributes - attributes go on child &lt;source&gt; or &lt;img&gt; tags</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;picture&gt;
+  &lt;source srcset="small.jpg" media="(max-width: 600px)"&gt;
+  &lt;source srcset="large.jpg" media="(min-width: 601px)"&gt;
+  &lt;img src="fallback.jpg" alt="Example Picture"&gt;
+&lt;/picture&gt;</pre>
+            <div class="output-example">
+                &lt;!-- Picture element chooses image based on viewport width. Images not shown here. --&gt;
+                Picture element demo: will show fallback.jpg if no media match.
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="audio">
+        <div class="tag-name">&lt;audio&gt;</div>
+        <div class="desc">Embedding audio content. Supports controls, multiple sources, and fallback.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>controls</code>: Display playback controls</li>
+                <li><code>autoplay</code>: Play audio automatically on load</li>
+                <li><code>loop</code>: Repeat audio indefinitely</li>
+                <li><code>muted</code>: Mute audio initially</li>
+                <li><code>preload</code>: Hint about loading behavior (<code>auto</code>, <code>metadata</code>, <code>none</code>)</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;audio controls&gt;
+  &lt;source src="example-audio.mp3" type="audio/mpeg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;</pre>
+            <div class="output-example">
+                <audio controls style="max-width:100%">
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="video">
+        <div class="tag-name">&lt;video&gt;</div>
+        <div class="desc">Embedding video content with controls and multiple sources.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>controls</code>: Display playback controls</li>
+                <li><code>autoplay</code>: Play video automatically on load</li>
+                <li><code>loop</code>: Repeat video indefinitely</li>
+                <li><code>muted</code>: Mute video initially</li>
+                <li><code>width</code>, <code>height</code>: Dimensions</li>
+                <li><code>poster</code>: Image shown before playback</li>
+                <li><code>preload</code>: Hint about loading (<code>auto</code>, <code>metadata</code>, <code>none</code>)</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;video width="320" height="240" controls&gt;
+  &lt;source src="example-video.mp4" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</pre>
+            <div class="output-example">
+                <video width="320" height="240" controls>
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="source">
+        <div class="tag-name">&lt;source&gt;</div>
+        <div class="desc">Specifies multiple media resources for &lt;video&gt; and &lt;audio&gt; elements or different image sources in &lt;picture&gt;.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>src</code>: Path to media file</li>
+                <li><code>type</code>: Media MIME type (e.g., audio/mpeg, video/mp4)</li>
+                <li><code>media</code>: Media query (for &lt;picture&gt;)</li>
+                <li><code>sizes</code>: Size of image (for &lt;picture&gt; and responsive images)</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;source src="audio.mp3" type="audio/mpeg"&gt;</pre>
+            <div class="output-example">Used inside media elements; no standalone visual output.</div>
+        </div>
+    </article>
+</section>
+
+<!-- Forms -->
+<section id="forms">
+    <h2>Form and Input Tags</h2>
+
+    <article class="tag-block" id="form">
+        <div class="tag-name">&lt;form&gt;</div>
+        <div class="desc">Defines a form for user input, can contain various input elements.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>action</code>: URL to which the form data is sent on submission.</li>
+                <li><code>method</code>: HTTP method for submission (<code>get</code>, <code>post</code>)</li>
+                <li><code>enctype</code>: Encoding type for form data (e.g. <code>multipart/form-data</code> for file uploads)</li>
+                <li><code>novalidate</code>: Disable validation</li>
+                <li><code>autocomplete</code>: Enable or disable autofill</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</pre>
+            <div class="output-example">
+                <form action="#" method="post" onsubmit="alert('Form submitted!');return false;">
+                    <label for="name">Name:</label><br />
+                    <input type="text" id="name" name="name" required /><br /><br />
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="input">
+        <div class="tag-name">&lt;input&gt;</div>
+        <div class="desc">
+            Defines a variety of input controls depending on the <code>type</code> attribute. Self-closing tag (void).
+        </div>
+        <div class="attrs">
+            <ul>
+                <li><code>type</code>: Type of input (e.g., <code>text</code>, <code>password</code>, <code>checkbox</code>, <code>radio</code>, <code>submit</code>, <code>email</code>, <code>number</code>, <code>date</code>, etc.)</li>
+                <li><code>name</code>: Name of the input control (used when submitting)</li>
+                <li><code>value</code>: Value of the input</li>
+                <li><code>placeholder</code>: Hint text displayed inside empty input</li>
+                <li><code>required</code>: Marks input as required</li>
+                <li><code>disabled</code>: Disables the input</li>
+                <li><code>checked</code>: For checkbox/radio to specify checked state</li>
+                <li><code>min</code>, <code>max</code>, <code>step</code>: For number/date inputs</li>
+                <li><code>pattern</code>: Regex pattern for validation</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;input type="email" name="email" placeholder="Enter your email" required&gt;</pre>
+            <div class="output-example">
+                <input type="email" name="email" placeholder="Enter your email" required style="width:90%"/>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="textarea">
+        <div class="tag-name">&lt;textarea&gt;</div>
+        <div class="desc">Defines a multi-line text input control.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>rows</code>: Number of visible text lines</li>
+                <li><code>cols</code>: Visible character width</li>
+                <li><code>placeholder</code>: Hint text</li>
+                <li><code>maxlength</code>: Maximum allowed characters</li>
+                <li><code>required</code>: Mark as required</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;textarea rows="4" cols="30" placeholder="Enter comments..."&gt;&lt;/textarea&gt;</pre>
+            <div class="output-example">
+                <textarea rows="4" cols="30" placeholder="Enter comments..."></textarea>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="button">
+        <div class="tag-name">&lt;button&gt;</div>
+        <div class="desc">Defines a clickable button. Can specify its behavior with the type attribute.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>type</code>: <code>submit</code> (default), <code>button</code> (general button), or <code>reset</code></li>
+                <li><code>disabled</code>: Disables the button</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;button type="button"&gt;Click me&lt;/button&gt;</pre>
+            <div class="output-example">
+                <button type="submit">Submit</button>
+                <br /><br />
+                <button type="button">Click me</button>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="label">
+        <div class="tag-name">&lt;label&gt;</div>
+        <div class="desc">Defines a label for an input element, improves accessibility and clicking label focuses input.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>for</code>: Id of the input this label is associated with.</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input id="username" type="text"&gt;</pre>
+            <div class="output-example">
+                <label for="username">Username:</label><br />
+                <input id="username" type="text" />
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="fieldset">
+        <div class="tag-name">&lt;fieldset&gt;</div>
+        <div class="desc">Groups related input controls together with an optional legend.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;fieldset&gt;
+  &lt;legend&gt;Personal Info&lt;/legend&gt;
+  &lt;label&gt;Name: &lt;input type="text"&gt;&lt;/label&gt;
+&lt;/fieldset&gt;</pre>
+            <div class="output-example">
+                <fieldset>
+                    <legend>Personal Info</legend>
+                    <label>Name: <input type="text" /></label>
+                </fieldset>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="select">
+        <div class="tag-name">&lt;select&gt;</div>
+        <div class="desc">Defines a drop-down list, contains &lt;option&gt;s.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>name</code>, <code>id</code></li>
+                <li><code>multiple</code>: allows selecting multiple options</li>
+                <li><code>size</code>: number of visible options</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;select name="cars"&gt;
+  &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+  &lt;option value="saab"&gt;Saab&lt;/option&gt;
+&lt;/select&gt;</pre>
+            <div class="output-example">
+                <select name="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                </select>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="option">
+        <div class="tag-name">&lt;option&gt;</div>
+        <div class="desc">Defines an option within a &lt;select&gt; element.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>value</code>: The value submitted if selected</li>
+                <li><code>selected</code>: Marks option as initially selected</li>
+                <li><code>disabled</code>: Disables the option</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="optgroup">
+        <div class="tag-name">&lt;optgroup&gt;</div>
+        <div class="desc">Groups related options inside a &lt;select&gt; menu with a label.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>label</code>: Label for the group</li>
+                <li><code>disabled</code>: Disables whole group</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="datalist">
+        <div class="tag-name">&lt;datalist&gt;</div>
+        <div class="desc">Specifies pre-defined options for input controls with a list attribute.</div>
+        <div class="attrs">No attributes specific.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;input list="browsers" name="browser"&gt;
+&lt;datalist id="browsers"&gt;
+  &lt;option value="Chrome"&gt;
+  &lt;option value="Firefox"&gt;
+  &lt;option value="Safari"&gt;
+&lt;/datalist&gt;</pre>
+            <div class="output-example">
+                <input list="browsers" name="browser" placeholder="Choose or type browser" />
+                <datalist id="browsers">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Safari">
+                </datalist>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="output">
+        <div class="tag-name">&lt;output&gt;</div>
+        <div class="desc">Represents the result of a calculation or user action.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>for</code>: IDs of elements that the output depends on</li>
+                <li><code>name</code>: Name of the output</li>
+                <li><code>form</code>: The form element the output is associated with</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="progress">
+        <div class="tag-name">&lt;progress&gt;</div>
+        <div class="desc">Displays the progress of a task as a progress bar.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>value</code>: Current progress (number)</li>
+                <li><code>max</code>: Maximum value (defaults to 1)</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</pre>
+            <div class="output-example"><progress value="70" max="100">70%</progress></div>
+        </div>
+    </article>
+
+</section>
+
+<!-- Tables -->
+<section id="tables">
+    <h2>Table Tags</h2>
+
+    <article class="tag-block" id="table">
+        <div class="tag-name">&lt;table&gt;</div>
+        <div class="desc">Defines a table.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;table border="1"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;John&lt;/td&gt;&lt;td&gt;28&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Mary&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+            <div class="output-example">
+                <table border="1" style="border-collapse: collapse;">
+                    <thead>
+                    <tr><th>Name</th><th>Age</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>John</td><td>28</td></tr>
+                    <tr><td>Mary</td><td>22</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="thead">
+        <div class="tag-name">&lt;thead&gt;</div>
+        <div class="desc">Groups the header content in a table.</div>
+        <div class="attrs">Global attributes allowed.</div>
+    </article>
+
+    <article class="tag-block" id="tbody">
+        <div class="tag-name">&lt;tbody&gt;</div>
+        <div class="desc">Groups the body content in a table.</div>
+        <div class="attrs">Global attributes allowed.</div>
+    </article>
+
+    <article class="tag-block" id="tfoot">
+        <div class="tag-name">&lt;tfoot&gt;</div>
+        <div class="desc">Groups the footer content in a table, often for summary or totals.</div>
+        <div class="attrs">Global attributes allowed.</div>
+    </article>
+
+    <article class="tag-block" id="tr">
+        <div class="tag-name">&lt;tr&gt;</div>
+        <div class="desc">Defines a row in a table.</div>
+        <div class="attrs">Global attributes allowed.</div>
+    </article>
+
+    <article class="tag-block" id="th">
+        <div class="tag-name">&lt;th&gt;</div>
+        <div class="desc">Defines a header cell in a table, usually bold and centered.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>colspan</code>: Number of columns this cell spans</li>
+                <li><code>rowspan</code>: Number of rows this cell spans</li>
+                <li><code>scope</code>: Defines whether header is for "col", "row", "colgroup", "rowgroup"</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="td">
+        <div class="tag-name">&lt;td&gt;</div>
+        <div class="desc">Defines a standard cell in a table row.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>colspan</code>: Number of columns this cell spans</li>
+                <li><code>rowspan</code>: Number of rows this cell spans</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="caption">
+        <div class="tag-name">&lt;caption&gt;</div>
+        <div class="desc">Defines the title or explanation for a table. Typically rendered centered above the table.</div>
+        <div class="attrs">Global attributes allowed.</div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;table border="1"&gt;
+  &lt;caption&gt;User info&lt;/caption&gt;
+  ...
+&lt;/table&gt;</pre>
+            <div class="output-example">
+                <table border="1" style="border-collapse: collapse;">
+                    <caption style="caption-side: top; font-weight:bold; margin-bottom: 0.5rem;">User info</caption>
+                    <thead>
+                    <tr><th>Name</th><th>Age</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>John</td><td>28</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="colgroup">
+        <div class="tag-name">&lt;colgroup&gt;</div>
+        <div class="desc">Specifies a group of one or more columns in a table for applying styles or attributes.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>span</code>: Number of columns to group</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="col">
+        <div class="tag-name">&lt;col&gt;</div>
+        <div class="desc">Specifies column properties within a &lt;colgroup&gt;.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>span</code>: Number of columns this element applies to</li>
+                <li><code>width</code>: Width of the column</li>
+            </ul>
+        </div>
+    </article>
+</section>
+
+<!-- Embedded Content -->
+<section id="embedded-content">
+    <h2>Embedded Content Tags</h2>
+
+    <article class="tag-block" id="iframe">
+        <div class="tag-name">&lt;iframe&gt;</div>
+        <div class="desc">
+            Embeds another HTML page inside the current one.
+        </div>
+        <div class="attrs">
+            <ul>
+                <li><code>src</code>: URL of the page to embed</li>
+                <li><code>width</code>, <code>height</code>: Dimensions</li>
+                <li><code>title</code>: Description for accessibility</li>
+                <li><code>loading</code>: Lazy loading behavior</li>
+                <li><code>sandbox</code>: Security restrictions</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;iframe src="https://example.com" width="300" height="200" title="Example iframe"&gt;&lt;/iframe&gt;</pre>
+            <div class="output-example">
+                <iframe src="https://example.com" width="300" height="200" title="Example iframe" style="border:1px solid #ccc;"></iframe>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="embed">
+        <div class="tag-name">&lt;embed&gt;</div>
+        <div class="desc">
+            Embeds external content like PDFs, Flash, or other plug-in content. Void element.
+        </div>
+        <div class="attrs">
+            <ul>
+                <li><code>src</code>: URL of resource</li>
+                <li><code>type</code>: MIME type</li>
+                <li><code>width</code>, <code>height</code>: Dimensions</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="object">
+        <div class="tag-name">&lt;object&gt;</div>
+        <div class="desc">
+            Defines a container for embedding external resources (e.g. webpages, PDFs, multimedia). Can fall back to alternative content.
+        </div>
+        <div class="attrs">
+            <ul>
+                <li><code>data</code>: URL of object</li>
+                <li><code>type</code>: MIME type</li>
+                <li><code>width</code>, <code>height</code>: Dimensions</li>
+                <li><code>form</code>: Associates with form</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="param">
+        <div class="tag-name">&lt;param&gt;</div>
+        <div class="desc">Defines parameters for &lt;object&gt; elements.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>name</code>: Parameter name</li>
+                <li><code>value</code>: Parameter value</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="tag-block" id="canvas">
+        <div class="tag-name">&lt;canvas&gt;</div>
+        <div class="desc">
+            Used as a container to draw graphics on the fly via scripting (usually JavaScript).
+        </div>
+        <div class="attrs">
+            <ul>
+                <li><code>width</code>, <code>height</code>: Dimensions of the canvas</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;canvas id="myCanvas" width="150" height="100" style="border:1px solid #000000;"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "red";
+ctx.fillRect(20, 20, 100, 50);
+&lt;/script&gt;</pre>
+            <div class="output-example">
+                <canvas id="myCanvas" width="150" height="100" style="border:1px solid #000000;"></canvas>
+                <script>
+                    var c = document.getElementById("myCanvas");
+                    var ctx = c.getContext("2d");
+                    ctx.fillStyle = "red";
+                    ctx.fillRect(20, 20, 100, 50);
+                </script>
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="svg">
+        <div class="tag-name">&lt;svg&gt;</div>
+        <div class="desc">Defines a container for SVG graphics.</div>
+        <div class="attrs">
+            <ul>
+                <li><code>width</code>, <code>height</code>: Dimensions</li>
+                <li><code>viewBox</code>: Defines position and dimension in user space</li>
+                <li><code>xmlns</code>: XML namespace, typically <code>http://www.w3.org/2000/svg</code></li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /&gt;
+&lt;/svg&gt;</pre>
+            <div class="output-example">
+                <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="yellow circle with green border">
+                    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                </svg>
+            </div>
+        </div>
+    </article>
+</section>
+
+<!-- Scripting -->
+<section id="scripting">
+    <h2>Scripting Tags</h2>
+
+    <article class="tag-block" id="script">
+        <div class="tag-name">&lt;script&gt;</div>
+        <div class="desc">
+            Defines client-side script, typically JavaScript.
+        </div>
+        <div class="attrs">
+            <ul>
+                <li><code>src</code>: URL of external script</li>
+                <li><code>async</code>: Load script asynchronously</li>
+                <li><code>defer</code>: Execute script after HTML parsing</li>
+                <li><code>type</code>: Script type (default is text/javascript)</li>
+                <li><code>nomodule</code>: Do not execute script in module-supporting browsers</li>
+            </ul>
+        </div>
+        <div class="flex-container">
+        <pre class="code-example">&lt;script&gt;
+  console.log('Hello World');
+&lt;/script&gt;</pre>
+            <div class="output-example">
+                Console logs "Hello World". No visible output.
+            </div>
+        </div>
+    </article>
+
+    <article class="tag-block" id="noscript">
+        <div class="tag-name">&lt;noscript&gt;</div>
+        <div class="desc">
+            Defines alternate content to display if the user’s browser does not support scripting or has disabled scripts.
+        </div>
+        <div class="attrs">None specific.</div>
+        <div class="flex-container">
+            <pre class="code-example">&lt;noscript&gt;Please enable JavaScript to view this content.&lt;/noscript&gt;</pre>
+            <div class="output-example">Please enable JavaScript to view this content.</div>
+        </div>
+    </article>
+</section>
+
+<!-- Deprecated Tags -->
+<section id="deprecated-tags">
+    <h2>Deprecated or Obsolete Tags</h2>
+
+    <article class="tag-block" id="font">
+        <div class="tag-name">&lt;font&gt;</div>
+        <div class="desc">
+            Deprecated. Used to specify font size, color, and face. Use CSS instead.
+        </div>
+    </article>
+
+    <article class="tag-block" id="center">
+        <div class="tag-name">&lt;center&gt;</div>
+        <div class="desc">Deprecated. Used for centering text. Use CSS (<code>text-align:center</code>) instead.</div>
+    </article>
+
+    <article class="tag-block" id="big">
+        <div class="tag-name">&lt;big&gt;</div>
+        <div class="desc">Deprecated. Used to make text bigger. Use CSS (<code>font-size</code>) instead.</div>
+    </article>
+
+    <article class="tag-block" id="strike">
+        <div class="tag-name">&lt;strike&gt;</div>
+        <div class="desc">Deprecated. Use &lt;del&gt; or &lt;s&gt; instead. Defines strikethrough text.</div>
+    </article>
+
+    <article class="tag-block" id="applet">
+        <div class="tag-name">&lt;applet&gt;</div>
+        <div class="desc">Deprecated. Use &lt;embed&gt; or &lt;object&gt; instead. Defines an embedded applet.</div>
+    </article>
+
+    <article class="tag-block" id="basefont">
+        <div class="tag-name">&lt;basefont&gt;</div>
+        <div class="desc">Deprecated. Use CSS to specify default font styles.</div>
+    </article>
+
+    <article class="tag-block" id="dir">
+        <div class="tag-name">&lt;dir&gt;</div>
+        <div class="desc">Deprecated. Use &lt;ul&gt; instead. Defines a directory list.</div>
+    </article>
+
+    <article class="tag-block" id="frame">
+        <div class="tag-name">&lt;frame&gt;</div>
+        <div class="desc">Deprecated. Use &lt;iframe&gt; or CSS layouts instead. Defines a window in a frameset.</div>
+    </article>
+
+    <article class="tag-block" id="frameset">
+        <div class="tag-name">&lt;frameset&gt;</div>
+        <div class="desc">Deprecated. Use CSS layouts instead. Defines a set of frames.</div>
+    </article>
+
+    <article class="tag-block" id="acronym">
+        <div class="tag-name">&lt;acronym&gt;</div>
+        <div class="desc">Deprecated in HTML5. Use &lt;abbr&gt; instead.</div>
+    </article>
+
+    <article class="tag-block" id="tt">
+        <div class="tag-name">&lt;tt&gt;</div>
+        <div class="desc">Deprecated. Use CSS to specify monospace font instead.</div>
+    </article>
+</section>
+<footer style="text-align:center; margin-top:3rem; font-size:0.9rem; color:#666;">
+    HTML Cheat Sheet generated by BLACKBOXAI &copy; 2024
+</footer>
+</body>
+</html>
