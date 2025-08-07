@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css selectors</title>
     <style>
+        /* now i will use the universal sececctor */
+        * {
+            padding: 0;
+            margin: 0;
+        }
         /* element selector */
         div{
             background-color: brown;
@@ -18,12 +23,20 @@
         #green{
             background-color: green;
         }
+        /* now i will use the child selectors, here it should be a direct sleectors*/
+        div > p{
+            color: blue;
+            background-color: black;
+        }
     </style>
 </head>
 <body>
     <h2>here we will see about the selectors in css</h2>
     <div class="blue">i am a div and i am going to get selcted</div>
-    <div>i am the second div and i am also getting selected </div>
+    <div>i am the second div and i am also getting selected
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla doloremque quisquam maxime, distinctio id eum, illum praesentium amet magnam facere architecto blanditiis ullam eveniet excepturi numquam recusandae voluptatibus saepe quasi?</p>    
+    
+    </div>
     <div id="green">i am the green one using the green id</div>
 
 </body>
