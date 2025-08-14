@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Position Properties Demo</title>
+    <style>
+        body {
+            background: #f7f7fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 32px 24px 80px 24px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        .legend {
+            margin-bottom: 24px;
+            padding: 12px 18px;
+            background: #e9ecef;
+            border-radius: 8px;
+            font-size: 1.05em;
+        }
+        .parent {
+            position: relative;
+            min-height: 900px;
+            margin: 0 auto;
+        }
+        .box {
+            width: 80vw;
+            max-width: 700px;
+            height: 140px;
+            padding: 3px;
+            margin: 18px auto;
+            border: 2px solid #222;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 1px;
+            position: static;
+        }
+        .box1 {
+            background: linear-gradient(90deg, #a8e063 60%, #56ab2f 100%);
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 300px;
+            z-index: 2;
+            color: #222;
+            box-shadow: 0 4px 16px rgba(88, 175, 60, 0.18);
+        }
+        .box2 {
+            background: linear-gradient(90deg, #7f53ac 60%, #647dee 100%);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        .box3 {
+            background: linear-gradient(90deg, #b06ab3 60%, #4568dc 100%);
+            position: fixed;
+            bottom: 30px;
+            left: 50vw;
+            transform: translateX(-50%);
+            width: 320px;
+            z-index: 10;
+            box-shadow: 0 4px 16px rgba(176, 106, 179, 0.18);
+        }
+        .box4 {
+            background: linear-gradient(90deg, #eacda3 60%, #d6ae7b 100%);
+            color: #222;
+        }
+        @media (max-width: 600px) {
+            .box, .box1, .box2, .box3, .box4 {
+                width: 95vw;
+                min-width: 0;
+                font-size: 1em;
+            }
+            .container {
+                padding: 10px 2vw 80px 2vw;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1>CSS <code>position</code> Property Demo</h1>
+        <div class="legend">
+            <b>Legend:</b><br>
+            <span style="color:#56ab2f;">Green</span> = <b>absolute</b> (box1): Positioned absolutely to parent.<br>
+            <span style="color:#647dee;">Purple/Blue</span> = <b>sticky</b> (box2): Sticks to top when scrolling.<br>
+            <span style="color:#b06ab3;">Violet</span> = <b>fixed</b> (box3): Fixed to bottom center of viewport.<br>
+            <span style="color:#d6ae7b;">Beige</span> = <b>static</b> (box4): Default static position.
+        </div>
+        <div class="parent">
+            <div class="box box1">position: absolute (box1)</div>
+            <div class="box box2">position: sticky (box2)</div>
+            <div class="box box3">position: fixed (box3)</div>
+            <div class="box box4">position: static (box4)</div>
+        </div>
+    </div>
+</body>
+
+</html>
