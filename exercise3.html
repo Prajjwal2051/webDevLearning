@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .card {
+            background: #fff;
+            width: 340px;
+            min-height: 470px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.025);
+            box-shadow: 0 16px 40px rgba(44, 62, 80, 0.22);
+        }
+        .image {
+            padding: 32px 0 12px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .image img {
+            border-radius: 10px;
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
+        }
+        .capsules {
+            display: flex;
+            gap: 10px;
+            margin: 0 0 10px 0;
+        }
+        .capsules span {
+            border: 1.5px solid #b2bec3;
+            background: #f1f2f6;
+            color: #636e72;
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .capsules span:hover {
+            background: #dfe6e9;
+            color: #222f3e;
+        }
+        .content {
+            padding: 0 24px;
+            text-align: center;
+        }
+        .content h2 {
+            margin: 12px 0 8px 0;
+            font-size: 1.5em;
+            color: #222f3e;
+        }
+        .content p {
+            font-size: 15px;
+            color: #636e72;
+            margin-bottom: 18px;
+        }
+        .button {
+            margin: 18px 0 24px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .card-btn {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 10px 36px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.12);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .card-btn:hover {
+            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+            transform: scale(1.05);
+        }
+        @media (max-width: 400px) {
+            .card {
+                width: 98vw;
+                min-width: 0;
+            }
+            .image img {
+                width: 90vw;
+                height: 48vw;
+            }
+        }
+    </style>
+<body>
+    <div class="card">
+        <div class="image">
+            <img src="https://i.pinimg.com/1200x/33/11/41/3311412757ee6b693f0db9b0c9fd40ed.jpg" alt="Fashion Style" />
+        </div>
+        <div class="capsules">
+            <span>Clothes</span>
+            <span>Styles</span>
+        </div>
+        <div class="content">
+            <h2>Prajjwal</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam ducimus mollitia unde dolores? Possimus itaque sint enim explicabo deleniti. Placeat quaerat architecto quis.</p>
+        </div>
+        <div class="button">
+            <button class="card-btn">Follow</button>
+        </div>
+    </div>
+</body>
+</html>
