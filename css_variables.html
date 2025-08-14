@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+:root {
+  --main-bg: #e0eafc;
+  --main-color: #222f3e;
+  --accent: #667eea;
+  --padding: 20px;
+}
+
+body {
+  background: var(--main-bg);
+  color: var(--main-color);
+  padding: var(--padding);
+}
+
+.button {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+}
+</code></pre>
+    <title>CSS Variables - Simple Example</title>
+</head>
+<body>
+    <!--
+        CSS Variables (Custom Properties) - Simple Guide
+        -----------------------------------------------
+        1. CSS variables let you save a value (like a color or size) with a name.
+        2. You can use that name anywhere in your CSS.
+        3. If you change the value in one place, it changes everywhere you used it!
+    -->
+
+    <h1>CSS Variables - Easy Example</h1>
+    <p>This page shows how to use CSS variables. Look at the code and comments below!</p>
+
+    <div class="mybox">
+        <p>This box uses CSS variables for its color and padding.</p>
+    </div>
+
+    <button class="mybtn">A Button with CSS Variable Color</button>
+
+    <!-- CSS goes below -->
+    <style>
+        /*
+            1. Declare variables inside :root (means: for the whole page)
+            The name must start with --
+        */
+        :root {
+            --my-bg: #e0eafc;      /* background color */
+            --my-text: #222f3e;    /* text color */
+            --my-accent: #667eea;  /* accent color for button */
+            --my-padding: 20px;    /* padding size */
+        }
+
+        /*
+            2. Use the variables with var(--variable-name)
+        */
+        body {
+            background: var(--my-bg);
+            color: var(--my-text);
+            font-family: Arial, sans-serif;
+            padding: var(--my-padding);
+        }
+
+        .mybox {
+            background: #fff;
+            border: 2px solid var(--my-accent);
+            color: var(--my-text);
+            padding: var(--my-padding);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            max-width: 400px;
+        }
+
+        .mybtn {
+            background: var(--my-accent);
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .mybtn:hover {
+            background: #222f3e;
+        }
+    </style>
+
+    <!--
+        Try it yourself:
+        - Change the value of --my-bg or --my-accent in :root above.
+        - See how the page changes!
+        - Add your own variable, like --my-border, and use it in .mybox.
+    -->
+</body>
+</html>
