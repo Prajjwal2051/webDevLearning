@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 4</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    :root {
+        --nav-bg: #3c59a8;
+        --nav-text: #fff;
+        --nav-hover: #f7ca44;
+        --nav-spacing: 2.2rem;
+        --nav-padding: 1.2rem 0;
+        --nav-radius: 16px;
+        --nav-font: 'Poppins', Arial, sans-serif;
+        --nav-shadow: 0 4px 18px rgba(60, 89, 168, 0.10);
+        --nav-hover-bg: rgba(247,202,68,0.12);
+    }
+
+    body {
+        background: #f4f6fb;
+        font-family: var(--nav-font);
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        background: var(--nav-bg);
+        padding: var(--nav-padding);
+        border-radius: var(--nav-radius);
+        box-shadow: var(--nav-shadow);
+        margin: 32px auto 0 auto;
+        max-width: 700px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--nav-spacing);
+        padding: 0;
+        margin: 0;
+    }
+
+    ul li {
+        list-style: none;
+        color: var(--nav-text);
+        font-size: 1.18rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s;
+    }
+    ul li:hover {
+        color: var(--nav-hover);
+        background: var(--nav-hover-bg);
+    }
+
+    @media (max-width: 600px) {
+        nav {
+            max-width: 98vw;
+            border-radius: 0;
+        }
+        ul {
+            gap: 0.7rem;
+        }
+        ul li {
+            font-size: 1rem;
+            padding: 0.5rem 0.7rem;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>
